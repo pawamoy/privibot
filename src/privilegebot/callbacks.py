@@ -10,7 +10,7 @@ from .decorators import require_privileges, require_admin, require_access
 def start(update, context):
     tg_user = update.effective_user
     logging.info(f"{tg_user.username} ({tg_user.id}) called /start")
-    
+
     db_user = User.get_with_id(tg_user.id)
 
     if not db_user:
