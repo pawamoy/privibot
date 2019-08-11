@@ -41,7 +41,7 @@ def require_admin(func):
         except PermissionError:
             return
 
-        if not db_user.is_owner:
+        if not db_user.is_admin:
             deny_access(update, context, func.__name__)
 
         return func(update, context, *args, **kwargs)
@@ -59,7 +59,7 @@ def require_privileges(privileges):
                 return
 
             # permissions check are for basic users only: skip for admins
-            if not db_user.is_owner:
+            if not db_user.is_admin:
                 if not db_user.has_privileges(privileges):
                     deny_access(update, context, func.__name__)
                     return
