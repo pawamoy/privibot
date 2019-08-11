@@ -29,4 +29,3 @@ class Privileges(six.with_metaclass(_PrivilegesMetaclass)):
     @classmethod
     def get(cls, privilege_name):
         return cls.__getattribute__(_PrivilegesMetaclass.mapping_name).get(privilege_name)
-

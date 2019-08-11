@@ -70,7 +70,7 @@ class User(Base):
 
 class UserPrivilege(Base):
     __tablename__ = "privilege"
-    __table_args__ = (UniqueConstraint("user_id", "privilege"), {"useexisting": True})
+    __table_args__ = (UniqueConstraint("user_id", "privilege"), {"extend_existing": True})
 
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey("user.id"), nullable=False)

@@ -4,7 +4,7 @@ from textwrap import dedent
 from telegram import ParseMode
 
 from .database import User
-from .decorators import require_privileges, require_admin, require_access
+from .decorators import require_access, require_admin, require_privileges
 
 
 def start(update, context):

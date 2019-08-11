@@ -15,8 +15,9 @@ but that will cause problems: the code will get executed twice:
 Also see http://click.pocoo.org/5/setuptools/#setuptools-integration.
 """
 
-import os
 import logging
+import os
+import sys
 
 from telegram.ext import CommandHandler, Updater
 
@@ -26,6 +27,12 @@ from . import callbacks
 def main():
     """The main function, which is executed when you type ``privibot`` or ``python -m privibot``."""
     logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
+
+    token = os.environ.get("TELEGRAM_BOT_TOKEN")
+
+    if not token:
+        print("You must set the bot token in the environment variable TELEGRAM_BOT_TOKEN\n", file=sys.stderr)
+        return 1
 
     updater = Updater(token=os.environ.get("TELEGRAM_BOT_TOKEN"), use_context=True)
 

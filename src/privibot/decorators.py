@@ -1,7 +1,7 @@
 import logging
 from functools import wraps
 
-from .database import session, User
+from .database import User, session
 
 
 def _require_access(update, context, func_name):

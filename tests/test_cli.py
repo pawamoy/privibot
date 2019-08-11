@@ -1,5 +1,5 @@
-from pawabot import cli
+from privibot import cli
 
 
 def test_main():
-    assert cli.main([]) == 0
+    assert cli.main() == 1
