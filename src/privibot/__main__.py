@@ -1,5 +1,5 @@
 """
-Entry-point module, in case you use `python -m privilegebot`.
+Entry-point module, in case you use `python -m privibot`.
 
 Why does this file exist, and why __main__? For more info, read:
 
@@ -10,7 +10,7 @@ Why does this file exist, and why __main__? For more info, read:
 
 import sys
 
-from privilegebot.cli import main
+from privibot.cli import main
 
 if __name__ == "__main__":
     sys.exit(main())

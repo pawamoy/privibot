@@ -47,8 +47,8 @@ Then follow these instructions:
 1. ...and finally, create a new [pull/merge request][5]!
    Make sure to follow the guidelines.
 
-[1]: https://github.com/pawamoy/pawabot/issues/new
-[2]: https://github.com/pawamoy/pawabot
+[1]: https://github.com/pawamoy/privibot/issues/new
+[2]: https://github.com/pawamoy/privibot
 [3]: https://docs.pytest.org/en/latest/example/markers.html#using-k-expr-to-select-tests-based-on-their-name
 [5]: http://chris.beams.io/posts/git-commit/
-[4]: https://github.com/pawamoy/pawabot/compare
+[4]: https://github.com/pawamoy/privibot/compare

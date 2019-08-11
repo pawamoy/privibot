@@ -28,7 +28,7 @@ check-isort:  ## Check if imports are correctly ordered using isort.
 .PHONY: check-safety
 check-safety:  ## Check for vulnerabilities in dependencies using safety.
 	poetry run pip freeze 2>/dev/null | \
-		grep -v pawabot | \
+		grep -v privibot | \
 		poetry run safety check --stdin --full-report 2>/dev/null
 
 .PHONY: check-spelling

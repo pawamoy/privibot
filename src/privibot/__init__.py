@@ -1,5 +1,5 @@
 """
-privilegebot package.
+privibot package.
 
 A library to build Telegram Bot with a privilege system.
 

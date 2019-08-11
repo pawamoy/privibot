@@ -6,11 +6,11 @@ Why does this file exist, and why not put this in __main__?
 You might be tempted to import things from __main__ later,
 but that will cause problems: the code will get executed twice:
 
-- When you run `python -m privilegebot` python will execute
+- When you run `python -m privibot` python will execute
   ``__main__.py`` as a script. That means there won't be any
-  ``privilegebot.__main__`` in ``sys.modules``.
+  ``privibot.__main__`` in ``sys.modules``.
 - When you import __main__ it will get executed again (as a module) because
-  there's no ``privilegebot.__main__`` in ``sys.modules``.
+  there's no ``privibot.__main__`` in ``sys.modules``.
 
 Also see http://click.pocoo.org/5/setuptools/#setuptools-integration.
 """
@@ -24,7 +24,7 @@ from . import callbacks
 
 
 def main():
-    """The main function, which is executed when you type ``privilegebot`` or ``python -m privilegebot``."""
+    """The main function, which is executed when you type ``privibot`` or ``python -m privibot``."""
     logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 
     updater = Updater(token=os.environ.get("TELEGRAM_BOT_TOKEN"), use_context=True)
