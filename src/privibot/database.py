@@ -19,6 +19,10 @@ class User(Base):
         return f"<User(uid={self.uid}, username='{self.username}', is_admin={self.is_admin})>"
 
     @staticmethod
+    def all():
+        return list(session.query(User))
+
+    @staticmethod
     def get(int_or_string):
         if isinstance(int_or_string, int):
             return User.get_with_id(int_or_string)
