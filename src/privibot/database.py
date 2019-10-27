@@ -2,7 +2,9 @@ from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, UniqueConst
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
 
+
 Base = declarative_base()
+session = None
 
 
 class User(Base):
@@ -72,6 +74,10 @@ class User(Base):
         return True
 
 
+def save():
+    session.commit()
+
+
 class UserPrivilege(Base):
     __tablename__ = "privilege"
     __table_args__ = (UniqueConstraint("user_id", "privilege"), {"extend_existing": True})
@@ -86,11 +92,16 @@ class UserPrivilege(Base):
         return f"<UserPrivilege(user={self.user!r}, privilege='{self.privilege}')>"
 
 
-# connection
-engine = create_engine("sqlite:///db.sqlite3")
+def init(db_path="sqlite:///db.sqlite3"):
+    global session
 
-# create metadata
-Base.metadata.create_all(engine)
+    # connection
+    engine = create_engine(db_path)
 
-# create session
-session = sessionmaker(bind=engine)()
+    # create metadata
+    Base.metadata.create_all(engine)
+
+    # create session
+    session = sessionmaker(bind=engine)()
+
+    return session

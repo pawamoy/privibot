@@ -1,6 +1,3 @@
-import six
-
-
 class Privilege:
     def __init__(self, name, verbose_name, description):
         self.name = name
@@ -25,7 +22,7 @@ class _PrivilegesMetaclass(type):
         return super_new(mcs, cls, bases, dct)
 
 
-class Privileges(six.with_metaclass(_PrivilegesMetaclass)):
+class Privileges(metaclass=_PrivilegesMetaclass):
     @classmethod
     def get(cls, privilege_name):
         return cls.__getattribute__(_PrivilegesMetaclass.mapping_name).get(privilege_name)

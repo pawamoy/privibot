@@ -1,7 +1,7 @@
 import logging
 from functools import wraps
 
-from .database import User, session
+from .database import User, save
 
 
 def _require_access(update, context, func_name):
@@ -15,7 +15,7 @@ def _require_access(update, context, func_name):
     # update the username if it has changed
     if db_user.username != update.effective_user.username:
         db_user.username = update.effective_user.username
-        session.commit()
+        save()
 
     return db_user
 

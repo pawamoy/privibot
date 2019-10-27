@@ -8,7 +8,7 @@ please refer to the README.md included in this package to get the link to the of
 """
 
 from . import callbacks
-from .database import User, UserPrivilege, session
+from .database import User, UserPrivilege, init
 from .decorators import require_access, require_admin, require_privileges
 from .privileges import Privilege, Privileges
 
@@ -16,7 +16,7 @@ __all__ = [
     "callbacks",
     "User",
     "UserPrivilege",
-    "session",
+    "init",
     "require_privileges",
     "require_admin",
     "require_access",
