@@ -1,0 +1,24 @@
+{
+    "template": "https://github.com/pawamoy/cookie-poetry",
+    "commit": "e76abd133eebbdf329da7fd8a445e6998db7c5e8",
+    "context": {
+        "cookiecutter": {
+            "project_name": "privibot",
+            "project_description": "A Python library to add a privilege/permission system to your Telegram bot.",
+            "author_fullname": "Timothée Mazzucotelli",
+            "author_email": "pawamoy@pm.me",
+            "author_username": "pawamoy",
+            "repository_provider": "github.com",
+            "repository_namespace": "pawamoy",
+            "repository_name": "privibot",
+            "copyright_holder": "Timothée Mazzucotelli",
+            "copyright_holder_email": "pawamoy@pm.me",
+            "copyright_date": "2019",
+            "copyright_license": "ISC License",
+            "python_package_distribution_name": "privibot",
+            "python_package_import_name": "privibot",
+            "python_package_command_line_name": "privibot",
+            "_template": "https://github.com/pawamoy/cookie-poetry"
+        }
+    }
+}
