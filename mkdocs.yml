@@ -1,0 +1,39 @@
+site_name: "privibot"
+site_description: "Privilege system for Telegram bots."
+site_url: "https://pawamoy.github.io/privibot"
+repo_url: "https://github.com/pawamoy/privibot"
+repo_name: "pawamoy/privibot"
+
+nav:
+  - Overview: index.md
+  - Reference:
+    - cli.py: reference/cli.md
+    - callbacks.py: reference/callbacks.md
+    - database.py: reference/database.md
+    - decorators.py: reference/decorators.md
+    - privileges.py: reference/privileges.md
+  - Contributing: contributing.md
+  - Code of Conduct: code_of_conduct.md
+  - Changelog: changelog.md
+  - Credits: credits.md
+
+theme:
+  name: material
+
+extra_css:
+  - css/mkdocstrings.css
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - pymdownx.superfences
+  - pymdownx.emoji
+  - toc:
+      permalink: "¤"
+
+plugins:
+  - search
+  - mkdocstrings:
+      watch:
+        - src/privibot

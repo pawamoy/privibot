@@ -1,3 +1,5 @@
+"""Tests suite for `privibot`."""
+
 from pathlib import Path
 
 TESTS_DIR = Path(__file__).parent

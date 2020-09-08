@@ -1,19 +1,15 @@
-"""
-Module that contains the command line application.
+# Why does this file exist, and why not put this in `__main__`?
+#
+# You might be tempted to import things from `__main__` later,
+# but that will cause problems: the code will get executed twice:
+#
+# - When you run `python -m privibot` python will execute
+#   `__main__.py` as a script. That means there won't be any
+#   `privibot.__main__` in `sys.modules`.
+# - When you import `__main__` it will get executed again (as a module) because
+#   there's no `privibot.__main__` in `sys.modules`.
 
-Why does this file exist, and why not put this in __main__?
-
-You might be tempted to import things from __main__ later,
-but that will cause problems: the code will get executed twice:
-
-- When you run `python -m privibot` python will execute
-  ``__main__.py`` as a script. That means there won't be any
-  ``privibot.__main__`` in ``sys.modules``.
-- When you import __main__ it will get executed again (as a module) because
-  there's no ``privibot.__main__`` in ``sys.modules``.
-
-Also see http://click.pocoo.org/5/setuptools/#setuptools-integration.
-"""
+"""Module that contains the command line application."""
 
 import logging
 import os
@@ -22,10 +18,21 @@ import sys
 from telegram.ext import CommandHandler, Updater
 
 from . import callbacks
+from typing import List, Optional
 
 
-def main():
-    """The main function, which is executed when you type ``privibot`` or ``python -m privibot``."""
+def main(args: Optional[List[str]] = None) -> int:
+    """
+    Run the main program.
+
+    This function is executed when you type `privibot` or `python -m privibot`.
+
+    Arguments:
+        args: Arguments passed from the command line.
+
+    Returns:
+        An exit code.
+    """
     logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 
     token = os.environ.get("TELEGRAM_BOT_TOKEN")

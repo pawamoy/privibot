@@ -1,8 +1,16 @@
 # privibot
+
+[![ci](https://github.com/pawamoy/privibot/workflows/ci/badge.svg)](https://github.com/pawamoy/privibot/actions?query=workflow%3Aci)
+[![documentation](https://img.shields.io/badge/docs-mkdocs%20material-blue.svg?style=flat)](https://pawamoy.github.io/privibot/)
+[![pypi version](https://img.shields.io/pypi/v/privibot.svg)](https://pypi.org/project/privibot/)
+
+Privilege system for Telegram bots.
+
 This library provides decorators to restrict access to your Telegram bot handlers based on privileges given to users.
 The privileges are stored in a database through SQLAlchemy (SQLite, Postgres, etc.).
 
 ## Requirements
+
 privibot requires Python 3.6 or above.
 
 <details>
@@ -26,20 +34,21 @@ pyenv global system 3.6.8
 </details>
 
 ## Installation
+
 With `pip`:
 ```bash
 python3.6 -m pip install privibot
 ```
 
-With [`pipx`](https://github.com/cs01/pipx):
+With [`pipx`](https://github.com/pipxproject/pipx):
 ```bash
 python3.6 -m pip install --user pipx
 
 pipx install --python python3.6 privibot
 ```
 
-
 ## Usage
+
 To restrict access to a handler, decorate your callback functions like following:
 
 ```python
@@ -109,6 +118,7 @@ def some_callback(update, context):
 Users who do not pass the privilege test will receive a message saying they have been denied access.
 
 ### Built-in handlers
+
 This library also provides handlers and their callbacks for the following commands:
 - /start
 - /help
