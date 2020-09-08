@@ -14,11 +14,11 @@
 import logging
 import os
 import sys
+from typing import List, Optional
 
 from telegram.ext import CommandHandler, Updater
 
 from . import callbacks
-from typing import List, Optional
 
 
 def main(args: Optional[List[str]] = None) -> int:
